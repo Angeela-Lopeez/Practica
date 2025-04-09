@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog - Lista de Posts</title>
+</head>
+<body>
+    <h1>Mi Blog</h1>
+    {% for post in posts %}
+        <h2>{{ post.titulo }}</h2>
+        <p><strong>Autor:</strong> {{ post.autor }} | <em>{{ post.fecha_creacion }}</em></p>
+        <p>{{ post.contenido|truncatechars:150 }}</p>
+        <hr>
+    {% empty %}
+        <p>No hay publicaciones aún.</p>
+    {% endfor %}
+</body>
+</html>
